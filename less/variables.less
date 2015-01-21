@@ -1,0 +1,99 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import "../fonts/entypo.css";
+
+/* zocial */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+@font-color: hsl(35,41%,17%);  //#3e2f1a;
+@text-color:@font-color;
+@color: hsl(17,60%,36%); //#924325
+
+//.font-color(@percent) {color: lighten(@black, percentage(@percent / 100));}
+//@font-color:lighten(@font-color,5%); //hsl(42,44%,80%);  #E2D4B4
+
+// Link Color
+@link-color: hsl(20,83%,39%); //#b84811
+// Primary Variants -
+@lightLink: hsl(hue(@link-color),saturation(@link-color + 5%),lightness(@link-color + 10%));
+@lighterLink: hsl(hue(@link-color),saturation(@link-color + 5%),lightness(@link-color + 20%));
+@darkLink: hsl(hue(@link-color),saturation(@link-color - 5%),lightness(@link-color - 10%));
+@darkerLink: hsl(hue(@link-color),saturation(@link-color - 5%),lightness(@link-color - 20%));
+
+@link-hover-color: @link-color-hover;
+@link-color-hover: hsl(hue(@link-color),90%,46%);
+
+// Hovered Link Color
+//@link-color-hover: @white; //lighten(@link-color,15%)
+
+@bodycolor: #100c04; //#060504 #0D0A07
+@black: #000;
+@body-bg: @beige;
+
+
+// Grays (@font-color / hsl(35,41%,17%) / #3e2f1a)
+@gray-darker: darken(@font-color, 15%);
+@gray-dark: darken(@font-color, 7.5%);
+@gray: lighten(@font-color, 7.5%);
+@gray-light: lighten(@font-color, 15%);
+@gray-lighter: lighten(@font-color, 30%);
+
+
+// Brand Colors
+@brand-primary: @color;
+@brand-success: @font-color;
+@brand-warning: @link-color;
+@brand-danger: @creamybrown;
+@brand-info: @nofoblue; //dkbeige
+
+
+// Border Radius
+@border-radius: 3px;
+@border-radius-large: 5px;
+
+// Border Radius for Inputs, Selects, TextAreas
+@border-radius-input: 3px 3px 4px 4px;
+
+
+@white: #fff;
+@creamybrown: hsl(29,26%,47%); //#967659
+@ltbrown: #957558;
+@brown: #785537;
+@dkbrown: #5e5142; //351104
+@dkwmbrown: #6c4729;
+@dpbrown: #301308;
+@ltbeige: #fbf1df;
+@beige: #f7e5cc;
+@dkbeige: hsl(30,41%,85%); //#e8d8c8
+@bgbeige:#F8E4C2;
+@skintone: #e0c89d;
+@wmskintone: #ebc9a1;
+@dkskintone: #d7b388;
+@nofoblue:#86c3d2;
+
+@arialFont: Arial, Helvetica, sans-serif;
+@font-size: 14px;
+@shadow: #301308;
+
+// Mixin 
+@base:@color ; //#924325
+@lighter1: lighten(spin(@base, 5), 10%);
+@lighter2: lighten(spin(@base, 10), 20%);
+@lighter3: lighten(@base,25%);
+@darker1: darken(spin(@base, -5), 10%);
+@darker2: darken(spin(@base, -10), 20%);
+ 
+// Implementation 
+.one   {color: @base;}
+.two   {color: @lighter1;}
+.three {color: @lighter2;}
+.four  {color: @darker1;}
+.five  {color: @darker2;}
+
+
+@panel-bg:transparent;
+@panel-inner-border:1px solid @color;
+@panel-footer-bg: fade(@white,80%);
+@panel-default-heading-bg:transparent;
+@panel-default-border:1px solid @white;

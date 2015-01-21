@@ -1,0 +1,280 @@
+/* Border Radius */
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.border-radius-top(@radius) {
+  -webkit-border-radius: @radius @radius 0 0;
+  -moz-border-radius: @radius @radius 0 0;
+  border-radius: @radius @radius 0 0;
+}
+.border-radius-right(@radius) {
+  -webkit-border-radius: 0 @radius @radius 0;
+  -moz-border-radius: 0 @radius @radius 0;
+  border-radius: 0 @radius @radius 0;
+}
+.border-radius-bottom(@radius) {
+  -webkit-border-radius: 0 0 @radius @radius;
+  -moz-border-radius: 0 0 @radius @radius;
+  border-radius: 0 0 @radius @radius;
+}
+.border-radius-left(@radius) {
+  -webkit-border-radius: @radius 0 0 @radius;
+  -moz-border-radius: @radius 0 0 @radius;
+  border-radius: @radius 0 0 @radius;
+}
+@border-radius: 3px;
+@border-radius-base: 3px;
+.row-no-padding {
+  [class*="col-"]:not(:first-child),[class*="col-"]:not(:last-child) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.equal, .equal > div[class*='col-'] {  
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 0 auto;
+}
+
+// CSS3 PROPERTIES
+
+// Transformations
+.transition (@transition: all .175s linear) {
+  -moz-transition: @transition;
+  	-ms-transition: @transition;
+   	-o-transition: @transition;
+  -webkit-transition: @transition;
+  transition: @transition;
+}
+.transformDn (@transform: translateY(5px)) {
+  -moz-transform: @transform;
+  	-ms-transform: @transform;
+   	-o-transform: @transform;
+  -webkit-transform: @transform;
+  transform: @transform;
+}
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+     -moz-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees);
+       -o-transform: rotate(@degrees);
+          transform: rotate(@degrees);
+} 
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio);
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+.translate(@x, @y) {
+  -webkit-transform: translate(@x, @y);
+     -moz-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y);
+       -o-transform: translate(@x, @y);
+          transform: translate(@x, @y);
+}
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate(@x, @y, @z);
+     -moz-transform: translate(@x, @y, @z);
+      -ms-transform: translate(@x, @y, @z);
+       -o-transform: translate(@x, @y, @z);
+          transform: translate(@x, @y, @z);
+}
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden
+// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+.backface-visibility(@visibility){
+	-webkit-backface-visibility: @visibility;
+	   -moz-backface-visibility: @visibility;
+	    -ms-backface-visibility: @visibility;
+	        backface-visibility: @visibility;
+}
+// User select
+// For selecting text on the page
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+.up-arrow( @color: #fff, @size: 5px ) {
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: @size solid transparent;
+	border-right: @size solid transparent;
+
+	border-bottom: @size solid @color;
+}
+.down-arrow( @color: #fff, @size: 5px ) {
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: @size solid transparent;
+	border-right: @size solid transparent;
+
+	border-top: @size solid @color;
+}
+.left-arrow( @color: #fff, @size: 5px ) {
+	content: "";
+	width: 0;
+	height: 0;
+	border-top: @size solid transparent;
+	border-bottom: @size solid transparent;
+
+	border-right: @size solid @color;
+}
+.right-arrow( @color: #fff, @size: 5px ) {
+	content: "";
+	width: 0;
+	height: 0;
+	border-top: @size solid transparent;
+	border-bottom: @size solid transparent;
+
+	border-left: @size solid @color;
+}
+
+// Resize anything
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+// CSS3 Content Columns
+.content-columns(@columnCount, @columnGap: @gridGutterWidth) {
+  -webkit-column-count: @columnCount;
+     -moz-column-count: @columnCount;
+          column-count: @columnCount;
+  -webkit-column-gap: @columnGap;
+     -moz-column-gap: @columnGap;
+          column-gap: @columnGap;
+}
+
+.opacity(@opacity:.5) {
+	@freaking-ie: @opacity * 50;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@{freaking-ie})";
+	filter: alpha(opacity=@freaking-ie);
+	-webkit-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-moz-opacity: @opacity;
+	opacity: @opacity;
+}
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+}
+ 
+//Implementation 
+//#someDiv {.gradient(left, #663333, #333333);} 
+
+.quick-gradient (@origin: left, @alpha: 0.2) {
+    background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+    background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+//Implementation 
+//#somediv {background-color: BADA55; .quick-gradient(top, 0.2);}
+
+// My Variables
+
+.textShadowK(@shadow: 0 1px 0px rgba(0,0,0,.7)) {
+  text-shadow: @shadow;
+}
+.textShadowK-soft(@shadow_color:#301308) {
+	text-shadow:0 1px 2px fade(@dkwmbrown, 40%);
+}
+.textShadowK-glow(@shadow_color:@link-color) {
+	text-shadow:0 0 3px fade(@link-color, 35%),0 0 8px fade(@link-color, 20%);
+}
+.textShadowKNeg(@shadow: 0 -1px 0px rgba(0,0,0,.5)) {
+  text-shadow: @shadow;
+}
+.textShadowW(@op:.7) {
+  text-shadow: 0 1px 0px rgba(255,255,255,@op);
+}
+.textShadowWNeg(@shadow: 0 -1px 0px rgba(255,255,255,.5)) {
+  text-shadow: @shadow;
+}
+
+.bg-transparent(@color, @alpha: 1) {
+  background: rgba(red(@color), green(@color), blue(@color), @alpha);
+}
+
+// Placeholder text
+// -------------------------
+//.placeholder(@color: @placeholderText) {
+//  &:-moz-placeholder {
+//    color: @color;
+//  }
+//  &:-ms-input-placeholder {
+//    color: @color;
+//  }
+//  &::-webkit-input-placeholder {
+//    color: @color;
+//  }
+//}
+
+
+
+/*
+.icon-bathtub,
+.icon-bathtub\:regular {
+	&:extend .icon;
+	background-image: url('images/icons.svg');
+	background-position: 0 0;
+}
+.icon-bathtub-dims {
+	
+}
+.icon-kitchen,
+.icon-kitchen\:regular {
+	&:extend .icon;
+	background-image: url('images/icons.svg');
+	background-position: 0 -32px;
+}
+.icon-kitchen-dims {
+	width: 32px;
+	height: 32px;
+}
+.icon-open,
+.icon-open\:regular {
+	&:extend .icon;
+	background-image: url('images/icons.svg');
+	background-position: 0 -64px;
+}
+.icon-open-dims {
+	width: 32px;
+	height: 32px;
+}
+.icon-tile-flooring,
+.icon-tile-flooring\:regular {
+	&:extend .icon;
+	background-image: url('images/icons.svg');
+	background-position: 0 -96px;
+}
+.icon-tile-flooring-dims {
+	width: 32px;
+	height: 32px;
+}*/
